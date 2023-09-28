@@ -6,16 +6,22 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="https://i.imgur.com/Oyp81gz.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-                Shopping List Page
+                <span class="fw-bold" class="fs-1">Shopping List Page</span>
             </a>
-            <span class="navbar-text">
-                user: {{name}}
-            </span>
-            <span class="navbar-text">
-                kelas: {{class}}
+            <span class="navbar-text ml-auto">
+                Sesi terakhir login: {{ last_login }}
             </span>
         </div>
     </nav>
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col">
+                <h5>User: {{ name }}</h5>
+                <h5>Kelas: {{ class }}</h5>
+            </div>
+        </div>
+    </div>
 
 <table class="table">
   <thead>
@@ -35,72 +41,38 @@
         <td>{{product.price}}</td>
         <td>{{product.description}}</td>
         <td>{{product.date_added}}</td>
-        <td>
-                <a href="{% url 'main:edit_product' product.pk %}">
-                    <button>
-                        Edit
-                    </button>
-                </a>
-                <a href="{% url 'main:delete_product' product.pk %}">
-                    <button>
-                        Delete
-                    </button>
-                </a>
-            </td>
-        </tr>
+        <td> 
+            <div class="d-flex justify-content-between">
+                <form>
+                    <a href="{% url 'main:edit_product' product.pk %}">
+                        <button type="button" class="btn btn-primary btn-sm">Edit</button>
+                    </a>
+                </form>
+                <form>
+                    <a href="{% url 'main:delete_product' product.pk %}">
+                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
+                    </a>
+                </form>
+            </div>
+        </td>
+    </tr>
     {% endfor %}
   </tbody>
 </table>
 
-<!-- <table>
-    <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Description</th>
-        <th>Date Added</th>
-    </tr>
+<div class="text-left mb-3"> <!-- Tambahkan class mb-3 di sini -->
+    <a href="{% url 'main:create_product' %}">
+        <button type="button" class="btn btn-primary btn-sm">Add Product</button>
+    </a>
+</div>
 
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-    {% for product in products %}
-        <tr>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.date_added}}</td>
-            <td>
-                <a href="{% url 'main:edit_product' product.pk %}">
-                    <button>
-                        Edit
-                    </button>
-                </a>
-                <a href="{% url 'main:delete_product' product.pk %}">
-                    <button>
-                        Delete
-                    </button>
-                </a>
-            </td>
-        </tr>
-    {% endfor %}
-</table> -->
-
-<br />
-
-<a href="{% url 'main:create_product' %}">
-    <button>
-        Add New Product
-    </button>
-</a>
-
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-
-<div class="d-flex justify-content-start mt-3">
+<div class="d-flex justify-content-start mb-3"> <!-- Tambahkan class mb-3 di sini -->
     <form>
         <a href="{% url 'main:logout' %}">
             <button type="button" class="btn btn-primary btn-sm">Logout</button>
         </a>
     </form>
 </div>
-
+</div>
 
 {% endblock content %}
