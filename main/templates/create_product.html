@@ -1,7 +1,14 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<h1>Add New Product</h1>
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://i.imgur.com/Oyp81gz.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            <span class="fw-bold" class="fs-1">Add New Product</span>
+        </a>
+    </div>
+</nav>
 
 <form method="POST">
     {% csrf_token %}

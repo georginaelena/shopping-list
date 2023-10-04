@@ -8,8 +8,15 @@
 
 <div class = "login">
 
-    <h1>Login</h1>
-
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://i.imgur.com/Oyp81gz.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                <span class="fw-bold" class="fs-1">Log in</span>
+            </a>
+        </div>
+    </nav>
+    <!-- <h1>Login</h1> -->
     <form method="POST" action="">
         {% csrf_token %}
         <table>
@@ -25,7 +32,7 @@
 
             <tr>
                 <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
+                <td><input class="btn login_btn-primary btn-sm" type="submit" value="Login"></td>
             </tr>
         </table>
     </form>
@@ -38,8 +45,9 @@
         </ul>
     {% endif %}     
         
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
+    Don't have an account yet? <a href="{% url 'main:register' %}">
+                                <button type="button" class="btn btn-primary btn-sm">Register Now!</button>
+                                </a>
 </div>
 
 {% endblock content %}
