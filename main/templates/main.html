@@ -64,54 +64,12 @@
     </div>
 </div>
 
-<table id="product_table" class="mx-2"></table>
+<!-- tabel -->
+<div class="container"
+    <table id="product_table" class="mx-2"></table>
 
-<button type="button" class="btn btn-primary btn-sm ml-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
-
-<!-- <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Description</th>
-      <th scope="col">Date Added</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-    {% for product in products %}
-    <tr>
-        <td>{{product.name}}</td>
-        <td>{{product.price}}</td>
-        <td>{{product.description}}</td>
-        <td>{{product.date_added}}</td>
-        <td> 
-            <div class="d-flex justify-content-between">
-                <form>
-                    <a href="{% url 'main:edit_product' product.pk %}">
-                        <button type="button" class="btn btn-primary btn-sm">Edit</button>
-                    </a>
-                </form>
-                <form>
-                    <a href="{% url 'main:delete_product' product.pk %}">
-                        <button type="button" class="btn btn-danger btn-sm">Delete</button>
-                    </a>
-                </form>
-            </div>
-        </td>
-    </tr>
-    {% endfor %}
-  </tbody>
-</table> -->
-
-<!-- <div class="text-left mb-3"> 
-    <a href="{% url 'main:create_product' %}">
-        <button type="button" class="btn btn-primary btn-sm">Add Product</button>
-    </a>
-</div> -->
-
-
+    <button type="button" class="btn btn-primary btn-sm ml-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
+</div>
 
 <script>
     async function getProducts() {
